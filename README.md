@@ -21,3 +21,23 @@ A web-based application built with **Django** and **MySQL** to help users track 
 ```bash
 git clone [https://github.com/YOUR_USERNAME/expense-tracker.git](https://github.com/YOUR_USERNAME/expense-tracker.git)
 cd expense-tracker
+
+pip install -r requirements.txt
+
+CREATE DATABASE expense_tracker;
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'expense_tracker',
+        'USER': 'root',
+        'PASSWORD': 'YOUR_MYSQL_PASSWORD',  # <--- Update this
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
+
+python manage.py migrate
+python manage.py runserver
+EMAIL_HOST_USER = 'your-email@gmail.com'
+EMAIL_HOST_PASSWORD = 'your-app-password'
